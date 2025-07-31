@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	pw, err := playwright.NewPlaywright()
+	pw, err := playwright.Run()
 	if err != nil {
 		log.Fatalf("could not start playwright: %v", err)
 	}
