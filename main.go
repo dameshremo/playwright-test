@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/playwright-community/go-playwright"
+	"github.com/playwright-community/playwright-go"
 )
 
 func main() {
-	pw, err := playwright.Run()
+	pw, err := playwright.NewPlaywright()
 	if err != nil {
 		log.Fatalf("could not start playwright: %v", err)
 	}
