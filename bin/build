@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "-----> Installing Playwright dependencies"
+PLAYWRIGHT_BROWSERS_PATH=$HOME/.playwright/go-playwright
+mkdir -p $PLAYWRIGHT_BROWSERS_PATH
+
+echo "-----> Installing go-playwright"
+go install github.com/playwright-community/go-playwright@latest
+go run github.com/playwright-community/go-playwright/cmd/playwright install --with-deps
+
+echo "-----> Building Go application"
+go build -o bin/playwright-test -v .
